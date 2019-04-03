@@ -1,4 +1,7 @@
-void main() {
+import 'class.dart';
+import 'enum.dart';
+
+void main(List<String> arguments) {
   //List examples...
   List<int> noteList = [50, 60, 80, 10, 30];
   for (var item in noteList) {
@@ -16,5 +19,49 @@ void main() {
   //print(personAndAges['countryCode']);
 
   var clapping = '\u{1f44f}';
-  print(clapping);
+  //print(clapping);
+
+  //simpleFunctionExample();
+  //print(returnStringSimpleFunction());
+  //printFunction('Dart is amazing...', true);
+  //noteList.forEach(asClassFunction);
+
+  Point instance = new Point(2, 3);
+  ThreeDPoint threeInstance = new ThreeDPoint(5, 10, 12);
+
+  assert(Colors.Red.index == 0);
+}
+
+simpleFunctionExample() => print('Very Simple Function');
+returnStringSimpleFunction() => 'Dart Vader';
+
+///isActive optional parameter.
+void printFunction(String message, [bool isActive = true]) {
+  if (isActive) {
+    print(message);
+  }
+}
+
+void asClassFunction(int element) {
+  print(element);
+}
+
+void unImplementMethod() => throw UnimplementedError();
+
+void nestedFunctions() {
+  print('Master Function');
+
+  void slaveFunction() {
+    print('Slave Function');
+  }
+
+  slaveFunction();
+}
+
+void exceptionHandlingFunction() {
+  try {
+//codes...
+  } catch (e, s) {
+    //e is error message , s is stack trace for exception.
+  }
 }
