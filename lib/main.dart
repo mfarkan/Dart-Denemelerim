@@ -29,7 +29,35 @@ void main(List<String> arguments) {
   Point instance = new Point(2, 3);
   ThreeDPoint threeInstance = new ThreeDPoint(5, 10, 12);
 
-  assert(Colors.Red.index == 0);
+  var date = new DateTime.now().weekday;
+
+  switch (date) {
+    case DateTime.sunday:
+      print('sunday');
+      break;
+    case DateTime.monday:
+      print('monday');
+      break;
+    case DateTime.tuesday:
+      print('tuesday');
+      break;
+    case DateTime.wednesday:
+      print('wednesday');
+      break;
+    case DateTime.thursday:
+      print('thursday');
+      break;
+    case DateTime.friday:
+      print('friday');
+      break;
+    case DateTime.saturday:
+      print('saturday');
+      break;
+    default:
+  }
+
+  var names = new List<String>();
+  
 }
 
 simpleFunctionExample() => print('Very Simple Function');
