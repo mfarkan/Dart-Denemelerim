@@ -1,7 +1,7 @@
-import 'class.dart';
-import 'enum.dart';
+import 'class.dart' as classLib;
+import 'enum.dart' deferred as enumLib;
 
-void main(List<String> arguments) {
+Future main(List<String> arguments) async {
   //List examples...
   List<int> noteList = [50, 60, 80, 10, 30];
   for (var item in noteList) {
@@ -26,8 +26,8 @@ void main(List<String> arguments) {
   //printFunction('Dart is amazing...', true);
   //noteList.forEach(asClassFunction);
 
-  Point instance = new Point(2, 3);
-  ThreeDPoint threeInstance = new ThreeDPoint(5, 10, 12);
+  classLib.Point instance = new classLib.Point(2, 3);
+  classLib.ThreeDPoint threeInstance = new classLib.ThreeDPoint(5, 10, 12);
 
   var date = new DateTime.now().weekday;
 
@@ -57,13 +57,34 @@ void main(List<String> arguments) {
   }
 
   var names = new List<String>();
-  
+  num distance =
+      classLib.Point.distanceBetween(instance, new classLib.Point(4, 5));
+  print(distance);
+
+  print(enumLib.Colors.Blue.index);
+
+  bool enabled = true;
+  greet(enabled).then((val) {
+    print(val + ' return string in async method');
+  }).catchError((err) {}); //handling error and getting value of it.
+}
+
+///such a basic async method <3
+Future<String> greet(bool isEnabled) async {
+  if (isEnabled) {
+    return 'hi';
+  }
+  return 'hello';
 }
 
 simpleFunctionExample() => print('Very Simple Function');
 returnStringSimpleFunction() => 'Dart Vader';
 
-///isActive optional parameter.
+/// You can use [printFunction] like this:
+///
+/// ```
+/// /// printFunction('Message',true); // "Message"
+/// ```
 void printFunction(String message, [bool isActive = true]) {
   if (isActive) {
     print(message);

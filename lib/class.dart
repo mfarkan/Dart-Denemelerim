@@ -20,7 +20,7 @@ class Point {
     return sqrt(dx * dx + dy + dy);
   }
 
-  static distanceBetween(Point a, Point b) {
+  static num distanceBetween(Point a, Point b) {
     var dx = a.x - b.x;
     var dy = a.y - b.y;
     return sqrt(dx * dx + dy * dy);
@@ -41,7 +41,6 @@ class ThreeDPoint extends Point implements BasicClass {
         '${invocation.memberName}');
   }
 
-  @override
   num distanceTo(Point otherPoint) {
     return 1;
   }

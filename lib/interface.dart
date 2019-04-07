@@ -1,4 +1,2 @@
 ///Wow interface :O
-abstract class SuchAGoodInterface{
-
-}
+abstract class SuchAGoodInterface {}
